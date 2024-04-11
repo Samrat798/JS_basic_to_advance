@@ -42,12 +42,26 @@ function newAccount(name, initialBalance) {
   function showBalance() {
     console.log(`Hay ${name} your balance is ${balance}`);
   }
-  return showBalance;
+  function deposite(amount) {
+    balance += amount;
+    showBalance();
+  }
+  function withdraw(amount) {
+    if (amount > balance) {
+      console.log(`Hay,${name} sorry not enough funds`);
+      return;
+    }
+    balance -= amount;
+    showBalance();
+  }
+  return { showBalance: showBalance, deposite: deposite, withdraw: withdraw };
 }
 
-newAccount('sam', 5000)();
+// newAccount('sam', 5000)();
 
 const john = newAccount('john', 300);
 const bob = newAccount('Bob', 1000);
-john();
-bob();
+john.showBalance();
+john.deposite(600);
+john.withdraw(400);
+bob.showBalance();
