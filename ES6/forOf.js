@@ -19,6 +19,7 @@ console.log(shortName);
 for (const fruit of fruits) {
   if (fruit === 'banana') {
     // break;
+    continue;
   }
   console.log(fruit);
 }
