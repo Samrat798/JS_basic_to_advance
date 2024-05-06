@@ -9,7 +9,7 @@ boilingWater();
 console.log(`I'm thored`);
 function boilingWater() {
   console.log('boiling.....');
-  for (let i = 0; i < 100000; i++) {
+  for (let i = 0; i < 1000; i++) {
     console.log('Still not done...');
   }
   console.log('Done..');
